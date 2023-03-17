@@ -3,15 +3,15 @@ import React from 'react';
 import { IoMenuOutline } from 'react-icons/io5';
 import { FiSearch } from 'react-icons/fi';
 import { GrAppsRounded } from 'react-icons/gr';
-import localStorageService from '../../utils/localStorageService';
+// import localStorageService from '../../utils/localStorageService';
 // utils
 // import * as jwt from 'jsonwebtoken';
-import { useJwt } from 'react-jwt';
+// import { useJwt } from 'react-jwt';
 
 const NavBar = () => {
-  const token = localStorageService.getItem('jwt_token');
-  const { decodedToken } = useJwt(token);
-  const tok: any = decodedToken;
+  // const token = localStorageService.getItem('jwt_token');
+  // const { decodedToken } = useJwt(token);
+  // const tok: any = decodedToken;
 
   return (
     <div className="sticky top-0 flex items-center justify-between py-3 px-6 border-b bg-white">
@@ -48,7 +48,7 @@ const NavBar = () => {
             {/* <img src={guy} alt="" className="object-cover rounded-full" /> */}
           </div>
           <p className="whitespace-nowrap font-semibold text-[18px] pr-2">
-            {tok.email ?? ''}
+            email
           </p>
         </div>
       </div>
