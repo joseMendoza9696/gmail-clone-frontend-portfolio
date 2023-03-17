@@ -1,4 +1,6 @@
 import React from 'react';
+import AppContext from './context/AppContext';
+import useInitialState from './hooks/useInitialState';
 // ROUTES
 import { Routes, Route } from 'react-router-dom';
 // PAGES
@@ -9,15 +11,19 @@ import Trash from './pages/trash';
 import PrivateRoutes from './privateRoutes';
 
 function App() {
+  const initialState = useInitialState();
+
   return (
-    <Routes>
-      <Route element={<PrivateRoutes />}>
-        <Route element={<Inbox />} path="/" />
-        <Route element={<Sent />} path="/sent" />
-        <Route element={<Trash />} path="/trash" />
-      </Route>
-      <Route element={<Login />} path="/login" />
-    </Routes>
+    <AppContext.Provider value={initialState}>
+      <Routes>
+        <Route element={<PrivateRoutes />}>
+          <Route element={<Inbox />} path="/" />
+          <Route element={<Sent />} path="/sent" />
+          <Route element={<Trash />} path="/trash" />
+        </Route>
+        <Route element={<Login />} path="/login" />
+      </Routes>
+    </AppContext.Provider>
   );
 }
 

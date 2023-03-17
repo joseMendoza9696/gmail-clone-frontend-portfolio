@@ -81,6 +81,12 @@ const Login = () => {
             </div>
           </div>
         </form>
+        <div>
+          <h1 className="font-bold">Accounts</h1>
+          <p>jeff@gmail.com - hellobaby</p>
+          <p>mark@gmail.com - hellobaby</p>
+          <p>elon@gmail.com - hellobaby</p>
+        </div>
       </div>
     </div>
   );

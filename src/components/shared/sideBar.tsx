@@ -7,6 +7,8 @@ import { AiOutlineSend } from 'react-icons/ai';
 import { FaInbox } from 'react-icons/fa';
 // COMPONENTS
 import Compose from './compose';
+// UTILS
+import localStorageService from '../../utils/localStorageService';
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -56,6 +58,15 @@ const SideBar = () => {
           >
             {<BsTrash3 className="w-[1.7rem]  h-[1.7rem]" />}
             <p className="font-semibold">Trash</p>
+          </button>
+          <button
+            onClick={() => {
+              localStorageService.removeItem('jwt_token');
+              window.location.reload();
+            }}
+            className="text-gray-600 flex items-center gap-2"
+          >
+            <p className="font-semibold">Logout</p>
           </button>
         </div>
       </div>

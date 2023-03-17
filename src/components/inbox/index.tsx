@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 // TYPES
 import { EmailType } from '../../utils/types';
 // APOLLO GRAPHQL
@@ -9,10 +9,15 @@ import { useLazyQuery, useSubscription, useMutation } from '@apollo/client';
 // COMPONENTS
 import Email from './email';
 import localStorageService from '../../utils/localStorageService';
+import SingleEmail from '../shared/email';
+import AppContext from '../../context/AppContext';
 
 const InboxEmails = () => {
   const token = localStorageService.getItem('jwt_token');
   const [emails, setEmails] = useState<EmailType[]>([]);
+  // CONTEXT
+  const appContext: any = useContext(AppContext);
+  const showEmail = appContext.state.open;
 
   // GRAPHQL FUNCTIONS
   const [getInboxEmails] = useLazyQuery(INBOX_EMAILS, {
@@ -55,19 +60,23 @@ const InboxEmails = () => {
   return (
     <div>
       <h1 className="p-2 font-bold">INBOX</h1>
-      {emails.map((e, index) => (
-        <Email
-          to={e.to}
-          key={index}
-          from={e.from}
-          subject={e.subject}
-          body={e.body}
-          read={e.read}
-          createdAt={e.createdAt}
-          index={index}
-          removeEmail={removeEmail}
-        />
-      ))}
+      {!showEmail ? (
+        emails.map((e, index) => (
+          <Email
+            to={e.to}
+            key={index}
+            from={e.from.email}
+            subject={e.subject}
+            body={e.body}
+            read={e.read}
+            createdAt={e.createdAt}
+            index={index}
+            removeEmail={removeEmail}
+          />
+        ))
+      ) : (
+        <SingleEmail />
+      )}
     </div>
   );
 };
