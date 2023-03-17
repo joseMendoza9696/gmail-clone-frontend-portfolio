@@ -48,7 +48,7 @@ const NavBar = () => {
             {/* <img src={guy} alt="" className="object-cover rounded-full" /> */}
           </div>
           <p className="whitespace-nowrap font-semibold text-[18px] pr-2">
-            {tok.email}
+            {tok.email ?? ''}
           </p>
         </div>
       </div>
