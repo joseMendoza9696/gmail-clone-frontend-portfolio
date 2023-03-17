@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// ROUTES
+import { Routes, Route } from 'react-router-dom';
+// PAGES
+import Login from './pages/login';
+import Inbox from './pages/inbox';
+import Sent from './pages/sent';
+import Trash from './pages/trash';
+import PrivateRoutes from './privateRoutes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route element={<PrivateRoutes />}>
+        <Route element={<Inbox />} path="/" />
+        <Route element={<Sent />} path="/sent" />
+        <Route element={<Trash />} path="/trash" />
+      </Route>
+      <Route element={<Login />} path="/login" />
+    </Routes>
   );
 }
 
