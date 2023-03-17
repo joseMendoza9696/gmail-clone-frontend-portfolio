@@ -14,7 +14,7 @@ const Compose = ({
   const form = useRef(null);
 
   // GRAPHQL FUNCTIONS
-  const [createEmail, { loading: sendingEmail }] = useMutation(CREATE_EMAIL, {
+  const [createEmail] = useMutation(CREATE_EMAIL, {
     onCompleted: (data) => {
       console.log(data);
       onClose(false);
