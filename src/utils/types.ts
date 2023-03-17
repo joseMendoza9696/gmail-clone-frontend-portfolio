@@ -1,6 +1,9 @@
-export type EmailType = {
-  from: { email: string };
+export interface EmailType {
   subject: string;
   body: string;
-  time: string;
-};
+  createdAt: string;
+  from: { email: string };
+  to: string;
+  read?: boolean;
+  _id: string;
+}

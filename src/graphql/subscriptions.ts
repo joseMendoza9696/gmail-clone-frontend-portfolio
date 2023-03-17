@@ -7,6 +7,8 @@ export const NEW_EMAIL = gql`
       to
       body
       subject
+      createdAt
+      read
       from {
         email
       }

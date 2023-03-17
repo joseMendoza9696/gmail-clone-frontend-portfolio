@@ -10,13 +10,11 @@ const Compose = ({
   isVisible: boolean;
   onClose: any;
 }) => {
-  if (!isVisible) return null;
   const form = useRef(null);
 
   // GRAPHQL FUNCTIONS
   const [createEmail] = useMutation(CREATE_EMAIL, {
-    onCompleted: (data) => {
-      console.log(data);
+    onCompleted: () => {
       onClose(false);
     },
   });
@@ -30,7 +28,6 @@ const Compose = ({
         subject: formData.get('subject'),
         body: formData.get('body'),
       };
-      console.log(email);
       createEmail({
         variables: {
           email,
@@ -38,6 +35,7 @@ const Compose = ({
       });
     }
   };
+  if (!isVisible) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm  flex justify-center items-center">

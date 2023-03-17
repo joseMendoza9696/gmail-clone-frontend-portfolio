@@ -6,7 +6,7 @@ import { BsPencilSquare, BsTrash3 } from 'react-icons/bs';
 import { AiOutlineSend } from 'react-icons/ai';
 import { FaInbox } from 'react-icons/fa';
 // COMPONENTS
-import Compose from '../inbox/compose';
+import Compose from './compose';
 
 const SideBar = () => {
   const navigate = useNavigate();

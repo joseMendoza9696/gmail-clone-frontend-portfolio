@@ -13,3 +13,9 @@ export const CREATE_EMAIL = gql`
     EMAIL_create(email: $email)
   }
 `;
+
+export const MOVE_TO_TRASH = gql`
+  mutation EMAIL_moveTrashEmail($emailId: String!) {
+    EMAIL_moveTrashEmail(emailId: $emailId)
+  }
+`;

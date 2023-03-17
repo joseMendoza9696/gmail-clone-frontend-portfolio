@@ -1,6 +1,8 @@
 import React from 'react';
+// COMPONENTS
 import NavBar from '../components/shared/navBar';
 import SideBar from '../components/shared/sideBar';
+import TrashComponent from '../components/trash';
 
 const Trash = () => {
   return (
@@ -9,7 +11,7 @@ const Trash = () => {
       <div className="flex">
         <SideBar />
         <div className="w-full">
-          <h1>trash</h1>
+          <TrashComponent />
         </div>
       </div>
     </div>
