@@ -10,6 +10,7 @@ const EmailSent = ({ from, to, subject, body, createdAt }: EmailType) => {
 
   return (
     <div
+      id="email"
       onClick={() => {
         appContext.openEmailPage({
           email: {
@@ -24,7 +25,9 @@ const EmailSent = ({ from, to, subject, body, createdAt }: EmailType) => {
     >
       <p className="w-[8rem] font-bold"> {to}</p>
       <div className="flex items-center w-[16rem] sm:w-[30rem] truncate   lg:w-[40rem]">
-        <p className="font-semibold  ">{subject} -</p>
+        <p id="subject-sent" className="font-semibold  ">
+          {subject} -
+        </p>
         <p className="pl-1 text-gray-500 truncate">{body}</p>
       </div>
 

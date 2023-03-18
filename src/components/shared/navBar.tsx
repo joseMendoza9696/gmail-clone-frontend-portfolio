@@ -16,14 +16,11 @@ const NavBar = () => {
     <div className="sticky top-0 flex items-center justify-between py-3 px-6 border-b bg-white">
       {/* Left Section */}
       <div className="flex items-center gap-3">
-        <IoMenuOutline className="hidden md:flex w-8 h-8 text-gray-600" />
-        <div className="w-14 h-[2.5rem] flex  rounded-[0.5rem]  b-red-600">
-          {/* <img
-            src={logo}
-            alt=""
-            className="object-cover w-full h-full rounded-[0.5rem]"
-          /> */}
-        </div>
+        <IoMenuOutline
+          id="menu-icon"
+          className="hidden md:flex w-8 h-8 text-gray-600"
+        />
+        <div className="w-14 h-[2.5rem] flex  rounded-[0.5rem]  b-red-600"></div>
         <p className="text-[26px] font-semibold   text-gray-600">Gmail</p>
       </div>
       {/* Input */}
@@ -43,10 +40,11 @@ const NavBar = () => {
       <div className="flex items-center  gap-3">
         <GrAppsRounded className="w-6 h-6 text-[#98d4fa]" />{' '}
         <div className="flex items-center gap-3 border-2 rounded-full border-[#98d4fa]">
-          <div className="w-[35px] h-[35px] flex p-[2px] bg-[#98d4fa] rounded-full">
-            {/* <img src={guy} alt="" className="object-cover rounded-full" /> */}
-          </div>
-          <p className="whitespace-nowrap font-semibold text-[18px] pr-2">
+          <div className="w-[35px] h-[35px] flex p-[2px] bg-[#98d4fa] rounded-full"></div>
+          <p
+            id="account"
+            className="whitespace-nowrap font-semibold text-[18px] pr-2"
+          >
             {dectok !== null ? dectok.email : 'email'}
           </p>
         </div>

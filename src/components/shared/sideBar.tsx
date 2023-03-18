@@ -20,9 +20,10 @@ const SideBar = () => {
 
   return (
     <Fragment>
-      <div className="hidden lg:block w-[15rem] p-4 sticky top-20 h-full">
+      <div className="lg:block w-[15rem] p-4 sticky top-20 h-full">
         {/* Write Message */}
         <button
+          id="compose-button"
           onClick={() => {
             setShowCompose(true);
           }}
@@ -48,7 +49,9 @@ const SideBar = () => {
             className="text-gray-600 flex items-center gap-2"
           >
             {<AiOutlineSend className="w-[1.7rem]  h-[1.7rem]" />}
-            <p className="font-semibold">Sent</p>
+            <p id="sent-section" className="font-semibold">
+              Sent
+            </p>
           </button>
           <button
             onClick={() => {

@@ -51,7 +51,7 @@ const Compose = ({
             <div>
               <input
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                id="to"
+                id="to-compose"
                 name="to"
                 type="email"
                 autoComplete="off"
@@ -62,7 +62,7 @@ const Compose = ({
             <div>
               <input
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                id="subject"
+                id="subject-compose"
                 name="subject"
                 type="text"
                 autoComplete="off"
@@ -72,7 +72,7 @@ const Compose = ({
             </div>
             <div>
               <textarea
-                id="body"
+                id="body-compose"
                 name="body"
                 className="p-2.5 w-full text-black rounded-lg border "
                 placeholder="Your email here ..."
@@ -87,6 +87,7 @@ const Compose = ({
                 cancel
               </button>
               <button
+                id="send-button"
                 type="button"
                 onClick={sendEmail}
                 className="group relative w-full flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
